@@ -1,4 +1,4 @@
 # movie-search
 
-##API 
+## API 
 OMDB API:https://www.omdbapi.com/
