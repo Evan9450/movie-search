@@ -13,7 +13,6 @@ import {
 import React, { useEffect, useState } from 'react';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 
-import { SearchByTitle } from '../data/Api';
 import SearchIcon from '@material-ui/icons/Search';
 
 const Header = () => {
@@ -43,15 +42,6 @@ const Header = () => {
       height: 3,
     },
   })(Slider);
-
-  useEffect(() => {
-    // const title = 'star';
-    const handleSearch = async () => {
-      const data = await SearchByTitle('star');
-      console.log(data);
-    };
-    handleSearch();
-  }, []);
 
   return (
     <div>

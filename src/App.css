@@ -3,7 +3,10 @@ body {
   padding: 0;
   margin: 0;
 }
-
+.container {
+  width: 100%;
+  height: 100vh;
+}
 .header {
   z-index: 1;
   position: relative;
@@ -48,14 +51,49 @@ body {
 .main-left {
   margin-left: 15px;
   /* padding-top: 30px; */
-  width: 280px;
+  width: 30%;
   float: left;
   border-right: 2px solid #000000;
-  height: 100vh;
+  height: 100%;
 }
 
 .main-right {
-  width: 625px;
+  width: 65%;
   float: right;
-  height: 100vh;
+  height: 100%;
+}
+
+.list {
+  display: flex;
+  overflow: hidden;
+  padding: 20px 0;
+  line-height: 20px;
+  border-bottom: 1px solid #dcdcdc;
+  margin-bottom: 10px;
+}
+
+.poster {
+  /* display: flex; */
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+  float: left;
+}
+
+.pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+.title {
+  /* display: flex; */
+  margin-top: 10px;
+  margin-left: 10px;
+  /* display: inline-flex; */
+  float: right;
+}
+
+.year {
+  color: #666;
+  font-size: 14px;
 }

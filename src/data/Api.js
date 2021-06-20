@@ -15,3 +15,15 @@ export const SearchByTitle = async title => {
     .catch(function (res) {});
   return result;
 };
+
+export const SearchByID = async id => {
+  let result = await axios({
+    method: 'post',
+    url: OMDb_URL + `&i=${id}`,
+  })
+    .then(function (res) {
+      return res;
+    })
+    .catch(function (res) {});
+  return result;
+};
