@@ -1,0 +1,42 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  padding-left: 0 !important;
+  /* height: 100px; */
+  height: auto;
+}
+
+.brand {
+  /* display: flex; */
+  cursor: pointer;
+  padding-left: 12px;
+  padding-right: 12px;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.w-full {
+  width: 100%;
+}
+
+.pl-10 {
+  padding-left: 10px;
+}
+.flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+.align-items-center {
+  align-items: center;
+}
+
+.color-white {
+  color: white !important;
+}
