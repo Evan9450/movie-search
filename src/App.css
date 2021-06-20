@@ -4,19 +4,20 @@ body {
   margin: 0;
 }
 
-.container {
-  padding-left: 0 !important;
-  /* height: 100px; */
-  height: auto;
+.header {
+  z-index: 1;
+  position: relative;
+  height: 56px;
+  border-bottom: 1px solid #000000;
+  background-color: #000000;
 }
 
 .brand {
-  /* display: flex; */
   cursor: pointer;
-  padding-left: 12px;
-  padding-right: 12px;
-  /* justify-content: center; */
-  /* align-items: center; */
+  padding-left: 20px;
+  color: white;
+  margin: 0px;
+  font-size: 20px;
 }
 
 .w-full {
@@ -33,10 +34,28 @@ body {
 .justify-content-center {
   justify-content: center;
 }
+.justify-content-left {
+  justify-content: left;
+}
 .align-items-center {
   align-items: center;
 }
 
 .color-white {
   color: white !important;
+}
+
+.main-left {
+  margin-left: 15px;
+  /* padding-top: 30px; */
+  width: 280px;
+  float: left;
+  border-right: 2px solid #000000;
+  height: 100vh;
+}
+
+.main-right {
+  width: 625px;
+  float: right;
+  height: 100vh;
 }

@@ -2,9 +2,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import { GlobalStyle } from './globalStyle';
 import './App.css';
 
+import { Header, MovieDetail, MovieList } from './components';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
-
-import Header from './components/Header';
 
 function App() {
   return (
@@ -12,9 +11,9 @@ function App() {
       {/* <GlobalStyle /> */}
       <Router>
         <Header />
+        <MovieList />
+        <MovieDetail />
       </Router>
-
-      <h1>Movie Search</h1>
     </div>
   );
 }
