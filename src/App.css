@@ -49,27 +49,40 @@ body {
 }
 
 .main-left {
-  margin-left: 15px;
-  /* padding-top: 30px; */
+  position: absolute;
   width: 30%;
   float: left;
-  border-right: 2px solid #000000;
-  height: 100%;
+  /* border-right: 2px solid #000000; */
+  height: 560px;
+  overflow: scroll;
 }
 
 .main-right {
-  width: 65%;
+  width: 68%;
   float: right;
   height: 100%;
+}
+
+.results {
+  margin: 20px 10px;
+  color: #666;
+  font-weight: 100;
 }
 
 .list {
   display: flex;
   overflow: hidden;
-  padding: 20px 0;
+  height: 100px;
+  padding: 10px 0;
+  margin-left: 10px;
+  margin: 0 10px;
   line-height: 20px;
   border-bottom: 1px solid #dcdcdc;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
+  cursor: pointer;
+}
+.list:hover {
+  background-color: #dcdcdc;
 }
 
 .poster {
@@ -78,6 +91,69 @@ body {
   width: 50px;
   height: 50px;
   float: left;
+}
+.detail-container {
+  /* display: block; */
+  margin: 20px;
+}
+
+.layer-1 {
+  display: inline-block;
+  width: 100%;
+  height: 315px;
+  border-bottom: 1px soild #666 !important;
+}
+.layer-2 {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px soild #666;
+}
+
+.detail-poster {
+  width: 180px;
+  height: 300px;
+  margin-top: 10px;
+  border-radius: 8px;
+  float: inline-start;
+}
+
+.watchlist {
+  display: inline-block;
+  float: right;
+  margin: 10px 20px;
+  padding: 8px 15px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+
+.detail-title {
+  display: inline-block;
+  /* display: flex; */
+  margin-top: 75px;
+  width: 400px;
+  margin-left: 15px;
+
+  /* height: 300px; */
+  /* float: right; */
+}
+
+.pg {
+  display: inline;
+  border: 1px solid #666;
+  color: #000000;
+  border-radius: 2px;
+  width: fit-content;
+  padding: 0 8px;
+  cursor: pointer;
+}
+.pg:hover {
+  background-color: rgb(216, 216, 216);
+}
+.secindary-text {
+  font-size: 15px;
+  color: #666;
+  font-weight: 100;
 }
 
 .pic {

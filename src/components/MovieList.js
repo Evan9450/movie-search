@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 
-const MovieList = ({ List, handleClick }) => {
+const MovieList = ({ List, results, handleClick }) => {
   //   console.log(List);
   //   console.log(handleClick);
   return (
     <div className="main-left">
       {/* <ul> */}
+      <div className="results">
+        <span>{results + ' '}RESULTS </span>
+      </div>
       {List.map((item, index) => (
         <div className="list" key={index} onClick={() => handleClick(item.imdbID)}>
           <div className="poster">

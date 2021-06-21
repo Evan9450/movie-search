@@ -4,6 +4,7 @@ import { SearchByID, SearchByTitle } from '../data/Api';
 
 const Main = () => {
   const [list, setList] = useState([]);
+  const [results, setResults] = useState('');
   const [detail, setDetail] = useState([]);
 
   useEffect(() => {
@@ -12,6 +13,7 @@ const Main = () => {
       const data = await SearchByTitle('star wars');
       console.log(data);
       setList(data.data.Search);
+      setResults(data.data.totalResults);
     };
     handleSearch();
   }, []);
@@ -26,7 +28,7 @@ const Main = () => {
 
   return (
     <div>
-      <MovieList List={list} handleClick={handleClick} />
+      <MovieList List={list} results={results} handleClick={handleClick} />
       <MovieDetail detail={detail} />
     </div>
   );
