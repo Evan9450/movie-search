@@ -18,14 +18,16 @@ const Main = () => {
 
   const handleClick = async id => {
     const data = await SearchByID(id);
-    console.log(data);
-    setDetail(data);
+    // console.log(data);
+    setDetail([data.data]);
   };
+
+  console.log(detail);
 
   return (
     <div>
       <MovieList List={list} handleClick={handleClick} />
-      <MovieDetail />
+      <MovieDetail detail={detail} />
     </div>
   );
 };
