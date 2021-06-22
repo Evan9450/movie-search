@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 const MovieList = ({ List, results, handleClick }) => {
-  //   console.log(List);
-  //   console.log(handleClick);
   return (
     <div className="main-left">
-      {/* <ul> */}
       <div className="results">
         <span>{results + ' '}RESULTS </span>
       </div>
@@ -21,7 +18,6 @@ const MovieList = ({ List, results, handleClick }) => {
           </div>
         </div>
       ))}
-      {/* </ul> */}
     </div>
   );
 };

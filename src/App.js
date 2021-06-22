@@ -11,7 +11,6 @@ function App() {
       {/* <GlobalStyle /> */}
       {/* <div className="container"> */}
       <Router>
-        <Header />
         <Main />
       </Router>
       {/* </div> */}

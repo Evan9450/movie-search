@@ -4,7 +4,7 @@ body {
   margin: 0;
 }
 .container {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 }
 .header {
@@ -19,7 +19,7 @@ body {
   cursor: pointer;
   padding-left: 20px;
   color: white;
-  margin: 0px;
+  margin: 10px;
   font-size: 20px;
 }
 
@@ -35,7 +35,7 @@ body {
 }
 
 .justify-content-center {
-  justify-content: center;
+  justify-content: center !important;
 }
 .justify-content-left {
   justify-content: left;
@@ -49,18 +49,15 @@ body {
 }
 
 .main-left {
-  position: absolute;
-  width: 30%;
-  float: left;
-  /* border-right: 2px solid #000000; */
-  height: 560px;
+  height: 100vh;
   overflow: scroll;
 }
 
 .main-right {
-  width: 68%;
-  float: right;
-  height: 100%;
+  margin-top: 30px;
+  height: 100vh;
+  margin-left: 20px;
+  /* margin-right: 0; */
 }
 
 .results {
@@ -94,28 +91,29 @@ body {
 }
 .detail-container {
   /* display: block; */
-  margin: 20px;
+  margin: 20px 20px;
 }
 
 .layer-1 {
   display: inline-block;
-  width: 100%;
-  height: 315px;
+  /* width: 100%; */
+  height: auto;
   border-bottom: 1px soild #666 !important;
 }
 .layer-2 {
-  display: inline-block;
+  /* display: inline-block; */
   width: 100%;
   height: auto;
+  /* margin: 20px; */
   border-bottom: 1px soild #666;
 }
 
 .detail-poster {
-  width: 180px;
+  width: 200px;
   height: 300px;
   margin-top: 10px;
   border-radius: 8px;
-  float: inline-start;
+  /* float: inline-start; */
 }
 
 .watchlist {
@@ -128,11 +126,11 @@ body {
 }
 
 .detail-title {
-  display: inline-block;
-  /* display: flex; */
+  /* display: inline-block; */
+  /* display: inline-flex; */
   margin-top: 75px;
-  width: 400px;
-  margin-left: 15px;
+  /* width: 400px; */
+  /* margin-left: 15px; */
 
   /* height: 300px; */
   /* float: right; */
@@ -172,4 +170,39 @@ body {
 .year {
   color: #666;
   font-size: 14px;
+}
+
+.ratings {
+  /* display: inline-block; */
+  justify-content: space-between;
+  /* width: 150px; */
+  /* grid-template-columns: repeat(3, 50px 1fr) 100px; */
+  border-right: 1px solid #dcdcdc;
+  margin: 10px 10px;
+  padding: 0 10px;
+}
+
+.rating-font {
+  text-align: center;
+  color: #666;
+  font-size: 15px;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mt-2 {
+  margin-top: 2px;
 }
