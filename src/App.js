@@ -5,14 +5,17 @@ import './App.css';
 import { Header, Main } from './components';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 
+import { Provider } from 'react-redux';
+import store from './store';
+
 function App() {
   return (
     <div>
       {/* <GlobalStyle /> */}
       {/* <div className="container"> */}
-      <Router>
+      <Provider store={store}>
         <Main />
-      </Router>
+      </Provider>
       {/* </div> */}
     </div>
   );

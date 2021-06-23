@@ -1,31 +1,17 @@
-import { Col, Form, FormControl, InputGroup, Navbar, Row } from 'react-bootstrap';
-import {
-  FormControlLabel,
-  IconButton,
-  InputBase,
-  Radio,
-  RadioGroup,
-  Slider,
-  TextField,
-  Typography,
-} from '@material-ui/core';
-// import { Brand, HeaderWrapper, SearchSection, SearchWrapper } from './style';
+import { Button, Col, Form, FormControl, InputGroup, Modal, Row } from 'react-bootstrap';
+import { IconButton, InputBase, Slider, Typography } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
 
-// import Form from 'bootstrap';
 import SearchIcon from '@material-ui/icons/Search';
 
-const Header = ({ handleSearch, handleType }) => {
+const Header = ({ handleSearch, handleYearChange, movies }) => {
   const [searchText, setSearchText] = useState('');
   const [value, setValue] = useState([1800, 2021]);
-  const [types, setTypes] = useState('');
-  console.log(types);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    handleYearChange(value);
   };
-  //   console.log(value);
 
   const marks = [
     {
@@ -37,7 +23,6 @@ const Header = ({ handleSearch, handleType }) => {
       label: '2021',
     },
   ];
-  //   console.log(value);
 
   const type = [
     {
@@ -65,7 +50,7 @@ const Header = ({ handleSearch, handleType }) => {
         <Row className="w-full">
           <Col className=" flex justify-content-center align-items-center" xs={12} lg={1} md={1}>
             <div className="brand">
-              <span>Movies</span>
+              <span>Movie</span>
             </div>
           </Col>
           <Col xs={12} lg={4} md={4} className="flex justify-content-left align-items-center">
@@ -92,22 +77,17 @@ const Header = ({ handleSearch, handleType }) => {
                 </Col>
                 <Col xs={8}>
                   <Slider
-                    style={{ color: 'white', width: '100%' }}
-                    //   orientation="vertical"
-                    //   value={value}
+                    className="w-full color-white"
                     defaultValue={[1800, 2021]}
                     min={1800}
                     step={1}
                     max={2021}
                     scale={x => 1800 < x < 2021}
                     onChange={handleChange}
-                    // valueLabelDisplay="on"
                     aria-labelledby="range-slider"
-                    // getAriaValueText={valuetext}
                     marks={marks}
                   />
                 </Col>
-
                 <Col xs={2}>
                   <p className="color-white font-14 mt-1">{value[1]}</p>
                 </Col>
@@ -134,32 +114,6 @@ const Header = ({ handleSearch, handleType }) => {
                     />
                   ))}
                 </Form>
-                {/* <RadioGroup row aria-label="position" name="position" defaultValue="top">
-                  <FormControlLabel
-                    value="Any"
-                    className="color-white"
-                    control={<Radio className="color-white" />}
-                    label="Any"
-                  />
-                  <FormControlLabel
-                    value="Movies"
-                    className="color-white"
-                    control={<Radio className="color-white" />}
-                    label="Movies"
-                  />
-                  <FormControlLabel
-                    value="Series"
-                    className="color-white"
-                    control={<Radio size="small" className="color-white" />}
-                    label="Series"
-                  />
-                  <FormControlLabel
-                    value="Episodes"
-                    className="color-white"
-                    control={<Radio className="color-white" />}
-                    label="Episodes"
-                  />
-                </RadioGroup> */}
               </Row>
             </Row>
           </Col>
