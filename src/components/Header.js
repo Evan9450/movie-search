@@ -30,7 +30,7 @@ const Header = ({ handleSearch, handleYearChange, movies }) => {
       label: 'Any',
     },
     {
-      value: 'movies',
+      value: 'movie',
       label: 'Movies',
     },
     {
@@ -38,7 +38,7 @@ const Header = ({ handleSearch, handleYearChange, movies }) => {
       label: 'Series',
     },
     {
-      value: 'episodes',
+      value: 'episode',
       label: 'Episodes',
     },
   ];
