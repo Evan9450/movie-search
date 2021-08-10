@@ -4,6 +4,6 @@
 
 OMDB API:https://www.omdbapi.com/
 
-## Screen Shoot
+## Screenshot
 
 ![Screenshot](star-wars.png)
