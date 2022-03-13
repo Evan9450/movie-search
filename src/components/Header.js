@@ -1,4 +1,4 @@
-import { Button, Col, Dropdown, DropdownButton, Form, FormControl, InputGroup, Row } from 'react-bootstrap';
+import { Button, Col, Dropdown, DropdownButton, FormControl, InputGroup, Navbar, Row } from 'react-bootstrap';
 import { IconButton, InputBase, Slider, Typography } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 
@@ -28,34 +28,34 @@ const Header = ({ handleSearch, handleYearChange, movies }) => {
 	const [type, setType] = useState('All');
 	const typeOptions = [
 		{
-			value: '',
-			label: 'All',
+			value: 'All',
+			label: 'All ',
 		},
 		{
 			value: 'movie',
-			label: 'Movies',
+			label: 'Movies ',
 		},
 		{
 			value: 'series',
-			label: 'Series',
+			label: 'Series ',
 		},
 		{
 			value: 'episode',
-			label: 'Episodes',
+			label: 'Episodes ',
 		},
 	];
 
 	return (
 		<div>
-			<div className='header' style={{ height: '100%', width: '100% !important' }}>
-				<Row className='w-full'>
+			<Navbar bg='dark' variant='dark'>
+				<Row className='w-100 p-0'>
 					<Col className=' flex justify-content-center align-items-center' xs={12} lg={1} md={1}>
 						<div className='brand'>
 							<span>Movie</span>
 						</div>
 					</Col>
-					<Col xs={12} lg={5} md={5} className='flex justify-content-left align-items-center'>
-						<InputGroup className='mb-3'>
+					<Col xs={12} lg={5} md={5} className='d-flex justify-content-center align-items-center m-3'>
+						<InputGroup>
 							<DropdownButton
 								variant='outline-secondary'
 								// onClick={}
@@ -70,37 +70,35 @@ const Header = ({ handleSearch, handleYearChange, movies }) => {
 								onChange={(e) => setSearchText(e.target.value)}
 								onKeyPress={(e) => e.key === 'Enter' && handleSearch(searchText, type)}
 							/>
-							<IconButton style={{ padding: '10px' }} aria-label='search'>
+							<Button className='btn btn-dark' style={{ padding: '10px' }} aria-label='search'>
 								<SearchIcon className='color-white' onClick={(e) => handleSearch(searchText, type)} />
-							</IconButton>
+							</Button>
 						</InputGroup>
 					</Col>
-					<Col xs={12} lg={5} md={5} className='flex justify-content-center align-items-center'>
-						<Row className='w-full'>
-							<Row className='w-full mt-10 mb-10'>
-								<Typography style={{ color: 'white', paddingLeft: '0' }}>YEAR</Typography>
-							</Row>
-							<Row className='w-full'>
-								<Col xs={2} style={{ paddingLeft: '0' }}>
-									<p className='color-white font-14 mt-1'>{value[0]}</p>{' '}
-								</Col>
-								<Col xs={8}>
-									<Slider
-										className='w-full color-white'
-										defaultValue={[1800, 2021]}
-										min={1800}
-										step={1}
-										max={2021}
-										scale={(x) => 1800 < x < 2021}
-										onChange={handleChange}
-										aria-labelledby='range-slider'
-										marks={marks}
-									/>
-								</Col>
-								<Col xs={2}>
-									<p className='color-white font-14 mt-1'>{value[1]}</p>
-								</Col>
-							</Row>
+					<Col xs={12} lg={5} md={5} className='d-flex justify-content-center align-items-center m-3'>
+						<Row className='w-full mt-4'>
+							<Col xs={2} style={{ paddingLeft: '0' }}>
+								<p className='color-white font-14 mt-1'>YEAR</p>{' '}
+							</Col>
+							<Col xs={2} style={{ paddingLeft: '0' }}>
+								<p className='color-white font-14 mt-1'>{value[0]}</p>{' '}
+							</Col>
+							<Col xs={6}>
+								<Slider
+									className='w-full color-white'
+									defaultValue={[1800, 2021]}
+									min={1800}
+									step={1}
+									max={2021}
+									scale={(x) => 1800 < x < 2021}
+									onChange={handleChange}
+									aria-labelledby='range-slider'
+									marks={marks}
+								/>
+							</Col>
+							<Col xs={2}>
+								<p className='color-white font-14 mt-1'>{value[1]}</p>
+							</Col>
 						</Row>
 					</Col>
 					{/* <Col xs={12} lg={3} md={3}>
@@ -127,7 +125,7 @@ const Header = ({ handleSearch, handleYearChange, movies }) => {
 						</Row>
 					</Col> */}
 				</Row>
-			</div>
+			</Navbar>
 		</div>
 	);
 };
