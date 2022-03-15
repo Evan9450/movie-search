@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 //apikey=6c1ae227
-const OMDb_URL = 'http://www.omdbapi.com/?apikey=6c1ae227&';
+const OMDb_URL = 'https://www.omdbapi.com/?apikey=6c1ae227&';
 
 export const SearchByTitle = async (title) => {
 	let result = await axios({
