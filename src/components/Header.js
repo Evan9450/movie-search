@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 import SearchIcon from '@material-ui/icons/Search';
 
-const Header = ({ handleSearch, handleYearChange, movies }) => {
+const Header = ({ handleSearch, handleYearChange }) => {
 	const [searchText, setSearchText] = useState('');
 	const [value, setValue] = useState([1800, 2021]);
 
@@ -25,7 +25,10 @@ const Header = ({ handleSearch, handleYearChange, movies }) => {
 	];
 
 	// deal with type
-	const [type, setType] = useState('All');
+	const [type, setType] = useState({
+		value: 'All',
+		label: 'All ',
+	});
 	const typeOptions = [
 		{
 			value: 'All',
@@ -58,11 +61,12 @@ const Header = ({ handleSearch, handleYearChange, movies }) => {
 						<InputGroup>
 							<DropdownButton
 								variant='outline-secondary'
-								// onClick={}
-								title={type ? type : ''}
+								title={type ? type.label : ''}
 								id='input-group-dropdown-1'>
 								{typeOptions.map((item, index) => (
-									<Dropdown.Item onClick={() => setType(item.value)}>{item.label}</Dropdown.Item>
+									<Dropdown.Item key={index} onClick={() => setType(item)}>
+										{item.label}
+									</Dropdown.Item>
 								))}
 							</DropdownButton>
 							<FormControl
@@ -101,29 +105,6 @@ const Header = ({ handleSearch, handleYearChange, movies }) => {
 							</Col>
 						</Row>
 					</Col>
-					{/* <Col xs={12} lg={3} md={3}>
-						<Row className='w-full'>
-							<Row className='w-full mt-10 mb-10'>
-								<Typography className='mt-10 mb-10' style={{ color: 'white' }}>
-									TYPE
-								</Typography>
-							</Row>
-							<Row className='w-full'>
-								<Form>
-									{typeOptions.map((item, index) => (
-										<Form.Check
-											type='radio'
-											className='color-white form-check-inline font-14 '
-											label={item.label}
-											onClick={() => handleSearch(searchText, item.value)}
-											name='formHorizontalRadios'
-											id='formHorizontalRadios1'
-										/>
-									))}
-								</Form>
-							</Row>
-						</Row>
-					</Col> */}
 				</Row>
 			</Navbar>
 		</div>

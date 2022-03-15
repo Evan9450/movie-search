@@ -4,12 +4,12 @@ import React, { useEfffect, useState } from 'react';
 import { useEffect } from 'react';
 
 const MovieDetail = ({ detail, addToWatchlist, removeFromWatchlist, movies }) => {
-	console.log('movies', movies);
+	console.log('=> detail', detail);
 	const handleClick = (item) => {
-		if (!movies.includes(item)) {
+		if (!movies.find((i) => i.Title == item.Title)) {
 			addToWatchlist(item);
 		}
-		if (movies.includes(item)) {
+		if (movies.find((i) => i.Title == item.Title)) {
 			removeFromWatchlist(item);
 		}
 	};
@@ -17,7 +17,7 @@ const MovieDetail = ({ detail, addToWatchlist, removeFromWatchlist, movies }) =>
 		<div className='main-right'>
 			{detail.length > 0 &&
 				detail.map((item, index) => (
-					<Row className='p-2'>
+					<Row className='p-2' key={item}>
 						<Col
 							lg={4}
 							sm={6}
@@ -32,17 +32,19 @@ const MovieDetail = ({ detail, addToWatchlist, removeFromWatchlist, movies }) =>
 								<Col className='d-flex justify-content-start m-4'>
 									<Button
 										className='mt-3 p-2 border'
-										style={{ borderRadius: '5px' }}
 										variant='outline'
 										onClick={() => handleClick(item)}
-										style={{ backgroundColor: movies.includes(item) ? '#ff0000' : '' }}>
+										style={{
+											backgroundColor: movies.find((i) => i.Title == item.Title) ? '#ff0000' : '',
+											borderRadius: '5px',
+										}}>
 										<svg
 											style={{ marginRight: '10px' }}
 											xmlns='http://www.w3.org/2000/svg'
 											width='16'
 											height='16'
 											fill='currentColor'
-											class='bi bi-bookmark'
+											className='bi bi-bookmark'
 											viewBox='0 0 16 16'>
 											<path d='M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z' />
 										</svg>
@@ -70,7 +72,7 @@ const MovieDetail = ({ detail, addToWatchlist, removeFromWatchlist, movies }) =>
 
 						<Row className='d-flex w-full flex-row '>
 							{item.Ratings.map((ratings, index) => (
-								<Col className='p-1 m-4 border ' style={{ borderRadius: '10px' }}>
+								<Col className='p-1 m-4 border ' key={ratings + index} style={{ borderRadius: '10px' }}>
 									<Row className='d-flex justify-content-center align-tiems-center p-2 m-2'>
 										<span className='rating-font'>{ratings.Value}</span>
 									</Row>

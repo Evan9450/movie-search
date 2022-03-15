@@ -18,17 +18,15 @@ const Main = ({ movies, addToWatchlist, removeFromWatchlist }) => {
 
 	//handle search by title and by title & type
 	const handleSearch = async (title, type) => {
-		console.log('=> type', type);
-		console.log('=> title', title);
 		setSearch(title);
 
-		if (title && type == 'All') {
+		if (title && type.value == 'All') {
 			const data = await SearchByTitle(title);
 			setList(data.data.Search);
 			setResults(data.data.totalResults);
 		}
-		if (type != 'All' && title) {
-			const t = await FilterByType(title, type);
+		if (type.value != 'All' && title) {
+			const t = await FilterByType(title, type.value);
 			setList(t.data.Search);
 			setResults(t.data.totalResults);
 		}
@@ -42,6 +40,7 @@ const Main = ({ movies, addToWatchlist, removeFromWatchlist }) => {
 
 	//filter exist data by change year;
 	const handleYearChange = (y) => {
+		console.log('=> y', y);
 		setYear(y);
 		let filterList = [];
 		if (list && list.length) {
@@ -91,10 +90,10 @@ const Main = ({ movies, addToWatchlist, removeFromWatchlist }) => {
 					</Row>
 				</Container>
 			) : (
-				<Container
-					className='flex justify-content-center align-tiems-center 
-        '>
-					<h1 style={{ marginTop: '35%' }}>Movie not found!</h1>
+				<Container className='d-flex justify-content-center align-items-center        '>
+					<Row>
+						<h1>Movie not found!</h1>
+					</Row>
 				</Container>
 			)}
 		</div>
