@@ -13,16 +13,16 @@ const Header = ({ handleSearch, handleYearChange }) => {
 		handleYearChange(value);
 	};
 
-	const marks = [
-		{
-			value: 1970,
-			label: '1970',
-		},
-		{
-			value: 2021,
-			label: '2021',
-		},
-	];
+	// const marks = [
+	// 	{
+	// 		value: 1970,
+	// 		label: '1970',
+	// 	},
+	// 	{
+	// 		value: 2021,
+	// 		label: '2021',
+	// 	},
+	// ];
 
 	// deal with type
 	const [type, setType] = useState({
@@ -97,7 +97,7 @@ const Header = ({ handleSearch, handleYearChange }) => {
 									scale={(x) => 1800 < x < 2021}
 									onChange={handleChange}
 									aria-labelledby='range-slider'
-									marks={marks}
+									// marks={marks}
 								/>
 							</Col>
 							<Col xs={2}>
